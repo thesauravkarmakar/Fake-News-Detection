@@ -9,7 +9,7 @@ body, html {
 }
 
 #home{
-  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('bg2.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('resources\img\bg2.jpg');
   background-position: center;
 }
 h1{
