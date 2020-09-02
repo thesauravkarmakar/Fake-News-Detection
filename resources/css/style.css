@@ -1,0 +1,232 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Mukta);
+
+body, html {
+  height: 100%;
+  align-items: center;
+  font-family: 'Mukta';
+}
+
+#home{
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('bg2.jpg');
+  background-position: center;
+}
+h1{
+  color: white;
+  font-family: 'Roboto';
+}
+
+#heading{
+  margin: 0;
+  padding: 0px 0px 35% 0px;
+  color: #900d0d;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #900d0d;
+  border-right: none;
+  padding: 5px;
+  height: 40px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #900d0d;
+}
+
+.searchTerm:focus{
+  color: #000000;
+}
+
+.searchButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #900d0d;
+  background: #900d0d;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+header{
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  padding: 0px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #900d0d;
+  z-index: 2;
+}
+
+header.Fake-News{
+  color: white;
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+header ul{
+  position: relative;
+  display: flex;
+}
+
+header ul li{
+  position: relative;
+  list-style: none;
+}
+
+header ul li a{
+  position: relative;
+  padding: 5px 20px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+header ul li a:hover{
+  border-bottom: 3px solid blue;
+  color: blue;
+}
+
+section{
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+  padding: 100px 100px 100px;
+}
+
+.wave1{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.col{
+  display: block;
+  float: left;
+  padding: 5px;
+}
+
+.span1,.span2{
+  width: 90%;
+}
+
+.points{
+  text-align: justify;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.names{
+  color: rgb(26, 9, 172);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.image{
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+  margin: 30px 15px 20px;
+}
+
+#members{
+  color: #900d0d;
+  padding: 40px;
+}
+
+#about{
+  background: #ffdbc5;
+  background-image: cover;
+  color: rgb(0, 0, 0);
+}
+
+#team{
+  background: #dcdde1;
+  background-position: center;
+}
+
+@media (max-width:600px) {
+  header, #search, #search-btn, .img, .names {
+    font-size: 16px;
+  }
+  h1{
+    font-size: 20px;
+  }
+  #name1{
+    margin: 0px 0px 0px 0px;
+  }
+  #name2{
+    margin: 0px 0px 0px 10px;
+  }
+  #name3{
+    margin: 0px 0px 0px 40px;
+  }
+}
+
+@media (min-width:601px) {
+  header, #search, #search-btn, .img, .names {
+    font-size: 18px;
+  }
+  h1{
+    font-size: 24px;
+  }
+  #name1{
+    margin: 0px 0px 0px 15px;
+  }
+  #name2{
+    margin: 0px 0px 0px 0px;
+  }
+  #name3{
+    margin: 0px 0px 0px 30px;
+  }
+}
+
+@media (min-width:1000px) {
+  header, #search, #search-btn, .img, .names {
+    font-size: 20px;
+  }
+  h1{
+    font-size: 30px;
+  }
+  #name1{
+    margin: 0px 0px 0px 30px;
+  }
+  #name2{
+    margin: 0px 0px 0px 10px;
+  }
+  #name3{
+    margin: 0px 0px 0px 10px;
+  }
+}
