@@ -3,8 +3,8 @@
 
 	├── dataset                   # Kaggle Dataset
 	├── model                     # Fake News Model
-	├── static					  # Resources
-	│	├── css                 
+	├── static		      # Resources
+	│   ├── css                 
 	│   └── img                              
 	├── templates                 # HTML Pages           
 	├── LICENSE
