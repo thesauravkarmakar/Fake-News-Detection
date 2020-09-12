@@ -12,6 +12,7 @@ body, html {
   background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('../img/bg2.jpg');
   background-position: center;
 }
+
 h1{
   color: white;
   font-family: 'Roboto';
@@ -155,10 +156,11 @@ section{
 }
 
 .image{
-  width: 50%;
   height: auto;
   border-radius: 50%;
   margin: 30px 15px 20px;
+  width:200px; 
+  height:50%;
 }
 
 #members{
@@ -177,7 +179,7 @@ section{
   background-position: center;
 }
 
-@media (max-width:600px) {
+@media (min-width:600px) {
   header, #search, #search-btn, .img, .names {
     font-size: 16px;
   }
@@ -195,13 +197,15 @@ section{
   }
 }
 
-@media (min-width:601px) {
+@media (max-width:768px) {
   header, #search, #search-btn, .img, .names {
     font-size: 18px;
   }
+
   h1{
     font-size: 24px;
   }
+
   #name1{
     margin: 0px 0px 0px 15px;
   }
@@ -210,6 +214,70 @@ section{
   }
   #name3{
     margin: 0px 0px 0px 30px;
+  }
+
+  header ul{
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 75px);
+    background: #900d0d;
+    top: -100%;
+    left: 0;
+    transition: 0.5s;
+    padding: 50px 100px;
+    text-align: center;
+    overflow: auto;
+    flex-direction: column;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  
+  header.active ul{
+    opacity: 1;
+    top: 75px;
+    transform: translateY(0);
+  }
+
+  .toggle{
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .toggle::before{
+    content: '';
+    position: absolute;
+    top: 4px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    z-index: 1;
+    box-shadow: 0 10px 0 #fff;
+    transition: 0.5s;
+  }
+
+  .toggle::after{
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    z-index: 1;
+    transition: 0.5s;
+  }
+
+  header.active .toggle::before{
+    top:14px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+  }
+
+  header.active .toggle::after{
+    bottom: 14px;
+    transform: rotate(-45deg);
   }
 }
 
