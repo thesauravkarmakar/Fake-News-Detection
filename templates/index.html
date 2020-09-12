@@ -5,18 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAKE NEWS Tracker </title>
-  <link rel="stylesheet" href="resources\css\style.css">
+  <link rel="stylesheet" href="../static/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <header id="header">
     <h1 id="title">FAKE NEWS TRACKER</h1>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#team">Team</a></li>
-    </ul>
+      <ul>
+        <li><a href="#home" onclick="toggle()">Home</a></li>
+        <li><a href="#about" onclick="toggle()">About</a></li>
+        <li><a href="#team" onclick="toggle()">Team</a></li>
+      </ul>
+    <div class="toggle" onclick="toggle()"></div>
   </header>
   <div class="wave">
     <svg class="wave1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -42,8 +43,8 @@
         <h3><u>What is Fake News?</u></h3>
         <ul class="points" id="firstpoint">
           <li>Fake news is news designed to spread hoaxes, propaganda and misinformarion deliberately.</li>
-          <li>It denotes a type of yellow journalism that intentionally presents misinformation or hoaxes 
-              spreading through traditional print news media and recent online media.</li>
+          <li>It denotes a type of yellow journalism that intentionally presents misinformation or hoaxes
+            spreading through traditional print news media and recent online media.</li>
           <li>This is often done to impose specific ideas and is usually achieved with political agenda.</li>
           <li>Fake news mimic real headlines and twist the story.</li>
         </ul>
@@ -64,22 +65,28 @@
     </div>
   </section>
   <section id="team">
-    <h1 id="members" style="text-align: center;"><u>TEAM</u></h1>
+    <h1 id="members"><u>TEAM</u></h1>
     <div class="row">
       <div class="column">
-        <img src="resources\images\Aagam.jpeg" class="image" width="200px" height="50%">
+        <img src="../static/img/Aagam.jpeg" class="image">
         <p class="names" id="name1"> Aagam Jain</p>
       </div>
       <div class="column">
-        <img src="resources\images\Utkarsh.jpeg" class="image" width="200px" height="50%">
+        <img src="../static/img/Utkarsh.jpeg" class="image">
         <p class="names" id="name2"> Utkarsh Kumawat</p>
       </div>
       <div class="column">
-        <img src="resources\images\Saurav.jpeg" class="image" width="200px" height="50%">
+        <img src="../static/img/Saurav.jpeg" class="image">
         <p class="names" id="name3"> Saurav Karmakar</p>
       </div>
     </div>
   </section>
+  <script type="text/javascript">
+          function toggle(){
+            var header= document.getElementById("header");
+            header.classList.toggle('active');
+          }
+  </script>
 </body>
 
 </html>
