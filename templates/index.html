@@ -2,91 +2,71 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAKE NEWS Tracker </title>
-  <link rel="stylesheet" href="../static/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Fake Trial</title>
 </head>
 
 <body>
-  <header id="header">
-    <h1 id="title">FAKE NEWS TRACKER</h1>
-      <ul>
-        <li><a href="#home" onclick="toggle()">Home</a></li>
-        <li><a href="#about" onclick="toggle()">About</a></li>
-        <li><a href="#team" onclick="toggle()">Team</a></li>
-      </ul>
-    <div class="toggle" onclick="toggle()"></div>
-  </header>
-  <div class="wave">
-    <svg class="wave1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path fill="#900d0d" fill-opacity="0.80"
-        d="M0,288L60,288C120,288,240,288,360,282.7C480,277,600,267,720,272C840,277,960,299,1080,266.7C1200,235,1320,149,1380,106.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-      </path>
-    </svg>
-  </div>
-  <section id="home">
-    <div class="wrap">
-      <div class="search">
-        <input type="text" class="searchTerm" placeholder="Search or Copy URL">
-        <button type="submit" class="searchButton">
-          <i class="fa fa-search"></i>
-        </button>
-      </div>
-    </div>
-  </section>
-  <section id="about">
-    <h1 id="heading"><u>About</u></h1>
-    <div class="row">
-      <div class="col span1">
-        <h3><u>What is Fake News?</u></h3>
-        <ul class="points" id="firstpoint">
-          <li>Fake news is news designed to spread hoaxes, propaganda and misinformarion deliberately.</li>
-          <li>It denotes a type of yellow journalism that intentionally presents misinformation or hoaxes
-            spreading through traditional print news media and recent online media.</li>
-          <li>This is often done to impose specific ideas and is usually achieved with political agenda.</li>
-          <li>Fake news mimic real headlines and twist the story.</li>
+    <header id="header">
+        <h1 id="title">FAKE NEWS TRACKER</h1>
+        <ul>
+            <li><a href="#home" class="active" onclick="toggle()">Home</a></li>
+            <li><a href="#about" onclick="toggle()">About</a></li>
+            <li><a href="#covid-19" onclick="toggle()">COVID-19</a></li>
+            <li><a href="#team" onclick="toggle()">Team</a></li>
+            <li><a href="#contact" onclick="toggle()">Contact</a></li>
         </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col span2">
-        <h3><u>Why tracking is IMPORTANT?</u></h3>
-        <ul class="points">
-          <li>Modern life has become quite suitable and the people of the world have to thank the vast
-            contribution of internet technology for transmission and information sharing.</li>
-          <li>This is an evolution in human history but at the same time unfocused the line between real
-            media and maliciously forged media.</li>
-          <li>Today anyone can publish content, credible or not and can consume that. Sadly, fake news accumulates
-            a great deal of attention over the internet, especially on social media.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section id="team">
-    <h1 id="members"><u>TEAM</u></h1>
-    <div class="row">
-      <div class="column">
-        <img src="../static/img/Aagam.jpeg" class="image">
-        <p class="names" id="name1"> Aagam Jain</p>
-      </div>
-      <div class="column">
-        <img src="../static/img/Utkarsh.jpeg" class="image">
-        <p class="names" id="name2"> Utkarsh Kumawat</p>
-      </div>
-      <div class="column">
-        <img src="../static/img/Saurav.jpeg" class="image">
-        <p class="names" id="name3"> Saurav Karmakar</p>
-      </div>
-    </div>
-  </section>
-  <script type="text/javascript">
-          function toggle(){
-            var header= document.getElementById("header");
+        <div class="toggle" onclick="toggle()"></div>
+    </header>
+    <div id="particles-js"></div>
+    <section id="home">
+        <div class="first group">
+            <div class="col span_1_of_2">
+                <form method="POST">
+                    <input type="text" placeholder="Search News" class="search" id="searchtxt">
+                    <button class="buttons" id="btn1" onclick="getInputValue(event);"><i class="fa fa-search"></i></button>
+                    <button class="buttons" id="btn2">PUBLIC</button>
+                    <p id="state"></p>
+                </form>
+                
+                <!-- <input type="checkbox" id="check">
+                <div class="box">
+                    <input class="searchbar" type="text" placeholder="Search or Copy URL">
+                    <label for="check"><i class="fa fa-search"></i></label>
+                </div> -->
+
+            </div>
+            <div class="col span_1_of_2">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggle() {
+            var header = document.getElementById("header");
             header.classList.toggle('active');
-          }
-  </script>
+        }
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../static/scripts/slider.js"></script>
+    <script src="../static/scripts/particles.js"></script>
+    <script src="../static/scripts/app.js"></script>
+    <script src="../static/scripts/index.js"></script>
 </body>
 
 </html>
