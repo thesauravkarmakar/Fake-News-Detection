@@ -62,13 +62,9 @@ def home():
 @app.route("/predict", methods=['POST'])
 def predict():
     model, encoder = loadModels('model', 'model')
-    # news = [x for x in request.form.values()]
     req = request.form
     news = req.get("searchtxt")
-
-    print(news)
     prediction = predict_news(str(news), 700, model, encoder)
-    print(prediction)
     return render_template("index.html", prediction_text='News is {}'.format(prediction))
 
 
