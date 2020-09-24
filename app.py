@@ -9,6 +9,9 @@ import pickle
 import os
 from flask import Flask, request, render_template
 
+nltk.download('stopwords')
+nltk.download('punkt')
+
 app = Flask(__name__)
 
 
@@ -22,7 +25,6 @@ def loadModels(model_path, encoder_path):
 
 
 def preprocessing(par):
-    X = []
     stop_words = set(nltk.corpus.stopwords.words("english"))
     tokenizer = nltk.tokenize.RegexpTokenizer(r'\w+')
     tmp = []
@@ -35,16 +37,16 @@ def preprocessing(par):
     return tmp
 
 
-def transform(X, maxlen,verbose=False):
+def transform(X, maxlen, encoder):
     tmp = np.array(X)
     tmp = tmp.reshape(1, tmp.shape[0])
     X = encoder.texts_to_sequences(tmp.tolist())
     return pad_sequences(X, maxlen)
 
 
-def predict_news(txt, maxlen, clf_model, verbose=False):
+def predict_news(txt, maxlen, clf_model, clf_encoder):
     X = preprocessing(txt)
-    X = transform(X, maxlen, verbose)
+    X = transform(X, maxlen, clf_encoder)
     y = clf_model.predict(X)
     if y > 0.5:
         return "Real"
@@ -59,11 +61,15 @@ def home():
 
 @app.route("/predict", methods=['POST'])
 def predict():
-    model, encoder = loadModels('model', 'model', verbose=False)
-    news = [x for x in request.form.values()]
-    prediction = predict_news(news, 700, model, verbose=False)
+    model, encoder = loadModels('model', 'model')
+    # news = [x for x in request.form.values()]
+    req = request.form
+    news = req.get("searchtxt")
 
-    return render_template("temp.html", prediction_text='News is $ {}'.format(prediction))
+    print(news)
+    prediction = predict_news(str(news), 700, model, encoder)
+    print(prediction)
+    return render_template("index.html", prediction_text='News is {}'.format(prediction))
 
 
 if __name__ == "__main__":
