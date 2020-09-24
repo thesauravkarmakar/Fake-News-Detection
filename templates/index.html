@@ -28,13 +28,16 @@
     <section id="home">
         <div class="first group">
             <div class="col span_1_of_2">
-                <form method="POST">
-                    <input type="text" placeholder="Search News" class="search" id="searchtxt">
-                    <button class="buttons" id="btn1" onclick="getInputValue(event);"><i class="fa fa-search"></i></button>
+                <form action="{{ url_for('predict') }}" method="POST">
+                    <input type="text" placeholder="Search News" class="search" id="searchtxt" name="searchtxt">
+                    <button class="buttons" id="btn1" ><i class="fa fa-search"></i></button>
+
                     <button class="buttons" id="btn2">PUBLIC</button>
                     <p id="state"></p>
                 </form>
                 
+                {{ prediction_text }}
+
                 <!-- <input type="checkbox" id="check">
                 <div class="box">
                     <input class="searchbar" type="text" placeholder="Search or Copy URL">
