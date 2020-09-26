@@ -28,7 +28,7 @@
             <div class="col span_1_of_2">
                 <form action="{{ url_for('predict') }}" method="POST">
                     <input type="text" placeholder="Verify NEWS here..." class="search" id="searchtxt" name="searchtxt">
-                    <button class="buttons" id="btn1" onclick="openIt()"><i class="fa fa-search"></i></button><br>
+                    <button class="buttons" id="btn1"><i class="fa fa-search"></i></button><br>
                     <a href="https://www.youtube.com/watch?v=pHxz8l1iWU4&list=RD2ogKpj5QuSY&index=3"
                         class="btn btn-2"><i class="fa fa-play-circle"></i> How it works</a>
 
@@ -117,16 +117,9 @@
             header.classList.toggle('active');
         }
     </script>
-    <script type="text/javascript">
-        function openIt() {
-            window.open("https://www.youtube.com/watch?v=pHxz8l1iWU4&list=RD2ogKpj5QuSY&index=3");
-        }
-    </script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="../static/scripts/slider.js"></script>
     <script src="../static/scripts/particles.js"></script>
     <script src="../static/scripts/app.js"></script>
-    <script src="../static/scripts/jquery.magnific-popup.js"></script>
 </body>
 
 </html>
