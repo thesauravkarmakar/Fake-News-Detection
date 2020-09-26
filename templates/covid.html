@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/covid.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="icon" href="../static/assets/coronavirus.png">
+    <title>COVID-19</title>
+</head>
+
+<body>
+    <header id="header">
+        <h1 id="main">BUST NEWS</h1>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+        </ul>
+        <div class="toggle" onclick="toggle()"></div>
+    </header>
+    <div class="section group">
+        <div class="col span_1_of_2">
+            <div class="column six wide">
+                <div class="ui raised segment" id="india-info">
+                    <div class="ui mini statistics">
+                        <div class="container">
+                            <h1 class="title">COVID-19 cases in INDIA</h1>
+                            <div class="card card-stats">
+                                <div class="card-body">
+                                    <div class="colmn">
+                                        <div class="grey statistic confirmed">
+                                            <div class="label">
+                                                CONFIRMED
+                                            </div>
+                                            <div class="value">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card-stats">
+                                <div class="card-body">
+                                    <div class="colmn">
+                                        <div class="column six wide">
+                                            <div class="ui raised segment" id="india-info">
+                                                <div class="ui mini statistics">
+                                                    <div class="red statistic deaths">
+                                                        <div class="label">
+                                                            DEATHS
+                                                        </div>
+                                                        <div class="value">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
+                                        <i class="fas fa-procedures"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card-stats">
+                                <div class="card-body">
+                                    <div class="colmn">
+                                        <div class="column six wide">
+                                            <div class="ui raised segment" id="india-info">
+                                                <div class="ui mini statistics">
+                                                    <div class="green statistic recovered">
+                                                        <div class="label">
+                                                            RECOVERED
+                                                        </div>
+                                                        <div class="value">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                                        <i class="fas fa-child"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card-stats">
+                                <div class="card-body">
+                                    <div class="colmn">
+                                        <div class="column six wide">
+                                            <div class="ui raised segment" id="india-info">
+                                                <div class="ui mini statistics">
+                                                    <div class="orange statistic active">
+                                                        <div class="label">
+                                                            ACTIVE
+                                                        </div>
+                                                        <div class="value">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui label updated-date">
+                                Last updated
+                                <div class="detail">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col span_1_of_2">
+            <div class="twitter">
+                <a class="twitter-timeline" data-width="300" data-height="520" data-theme="dark"
+                    href="https://twitter.com/COVIDNewsByMIB?ref_src=twsrc%5Etfw">Tweets by
+                    COVIDNewsByMIB</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </div>
+    <script src="../static/scripts/covid.js"></script>
+    <script>
+        function toggle() {
+            var header = document.getElementById("header");
+            header.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>
