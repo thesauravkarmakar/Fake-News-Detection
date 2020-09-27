@@ -11,6 +11,9 @@ from flask import Flask, request, render_template, url_for, redirect
 
 app = Flask(__name__)
 
+nltk.download('stopwords')
+nltk.download('punkt')
+
 
 def loadModels(model_path, encoder_path):
     model_path = os.path.join(model_path,"model.h5")
