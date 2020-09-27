@@ -16,8 +16,8 @@ app = Flask(__name__)
 
 
 def loadModels(model_path, encoder_path):
-    model_path = os.path.join(model_path, "model.h5")
-    encoder_path = os.path.join(encoder_path, "tokenizer.tk")
+    model_path = os.path.join(model_path,"model.h5")
+    encoder_path = os.path.join(encoder_path,"tokenizer.tk")
     model = load_model(model_path)
     with open(encoder_path, 'rb') as pickle_file:
         encoder = pickle.load(pickle_file)
@@ -61,12 +61,13 @@ def home():
 
 @app.route("/predict", methods=['POST'])
 def predict():
-    model, encoder = loadModels('model', 'model')
+    # model, encoder = loadModels('models', 'models')
+    model, encoder = loadModels('E:\\New folder\\Fake-Local\\models', 'E:\\New folder\\Fake-Local\\models')
     req = request.form
     news = req.get("searchtxt")
-    prediction = predict_news(str(news), 700, model, encoder)
+    prediction = predict_news(str(news), 256, model, encoder)
     return render_template("index.html", prediction_text='News is {}'.format(prediction))
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=5001,debug=True)
