@@ -7,10 +7,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import numpy as np
 import pickle
 import os
-from flask import Flask, request, render_template
-
-nltk.download('stopwords')
-nltk.download('punkt')
+from flask import Flask, request, render_template, url_for, redirect
 
 app = Flask(__name__)
 
@@ -57,12 +54,19 @@ def predict_news(txt, maxlen, clf_model, clf_encoder):
 @app.route('/')
 def home():
     return render_template("index.html")
-
+    
+    
+@app.route('/covid', methods=['GET', 'POST'])
+def covid_func():
+    if request.method == 'POST':
+        return redirect(url_for('home'))
+    return render_template("covid.html")
+    
 
 @app.route("/predict", methods=['POST'])
 def predict():
-    model, encoder = loadModels('models', 'models')
-#     model, encoder = loadModels('E:\\New folder\\Fake-Local\\models', 'E:\\New folder\\Fake-Local\\models')
+    # model, encoder = loadModels('models', 'models')
+    model, encoder = loadModels('E:\\New folder\\Fake-Local\\models', 'E:\\New folder\\Fake-Local\\models')
     req = request.form
     news = req.get("searchtxt")
     prediction = predict_news(str(news), 256, model, encoder)

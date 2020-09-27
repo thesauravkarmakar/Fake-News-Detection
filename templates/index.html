@@ -16,7 +16,7 @@
         <h1 id="title">BUST NEWS</h1>
         <ul>
             <li><a href="#home" class="active" onclick="toggle()">Home</a></li>
-            <li><a href="covid.html" onclick="toggle()">COVID-19</a></li>
+            <li><a href="{{ url_for('covid_func') }}" onclick="toggle()">COVID-19</a></li>
             <li><a href="#contact" onclick="toggle()">Contact</a></li>
         </ul>
         <div class="toggle" onclick="toggle()"></div>
