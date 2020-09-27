@@ -31,7 +31,7 @@
                 <form action="{{ url_for('predict') }}" method="POST">
 <<<<<<< HEAD
                     <input type="text" placeholder="Verify NEWS here..." class="search" id="searchtxt" name="searchtxt">
-                    <button class="buttons" id="btn1"><i class="fa fa-search"></i></button><br>
+                    <button class="buttons" id="btn1" onclick="openIt()"><i class="fa fa-search"></i></button><br>
                     <a href="https://www.youtube.com/watch?v=pHxz8l1iWU4&list=RD2ogKpj5QuSY&index=3"
                         class="btn btn-2"><i class="fa fa-play-circle"></i> How it works</a>
 =======
@@ -72,13 +72,23 @@
             header.classList.toggle('active');
         }
     </script>
+    <script type="text/javascript">
+        function openIt() {
+            window.open("https://www.youtube.com/watch?v=pHxz8l1iWU4&list=RD2ogKpj5QuSY&index=3");
+        }
+    </script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../static/scripts/slider.js"></script>
     <script src="../static/scripts/particles.js"></script>
     <script src="../static/scripts/app.js"></script>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     <script src="../static/scripts/index.js"></script>
 >>>>>>> parent of d267298... Merge pull request #9 from Aagam-Jain-113/frontend
+=======
+    <script src="../static/scripts/jquery.magnific-popup.js"></script>
+>>>>>>> parent of b8c61a9... Deleted dataset
 </body>
 
 </html>

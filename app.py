@@ -18,7 +18,7 @@ app = Flask(__name__)
 def loadModels(model_path, encoder_path):
     model_path = os.path.join(model_path, "model.h5")
     encoder_path = os.path.join(encoder_path, "tokenizer.tk")
-    model = load_model(model_path,compile = False)
+    model = load_model(model_path)
     with open(encoder_path, 'rb') as pickle_file:
         encoder = pickle.load(pickle_file)
     return model, encoder
