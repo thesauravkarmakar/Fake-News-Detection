@@ -32,19 +32,22 @@
     <section id="home">
         <div class="first group">
             <div class="col span_1_of_2">
-                <form action="{{ url_for('predict') }}" method="POST">
-                    <input type="text" placeholder="Verify NEWS here..." class="search" id="searchtxt" name="searchtxt">
-                    <button class="buttons" id="btn1"><i class="fa fa-search"></i></button><br>
-                    <a href="https://www.youtube.com/watch?v=nTIumXl3_Xo&t=8s"
-                        class="button popup-youtube"><i class="fa fa-play-circle"></i> How it works</a>
+                <form>
+                    <div class="loading" id="open">
+                        <input type="text" placeholder="Verify NEWS here..." class="search" id="searchtxt"
+                            name="searchtxt">
+                        <button type="button" class="buttons" id="btn--search"><i class="fa fa-search"></i>
+                        </button><br>
+                        <a href="https://www.youtube.com/watch?v=nTIumXl3_Xo&t=8s" class="button popup-youtube"><i
+                                class="fa fa-play-circle"></i> How it works</a>
+                    </div>
+                    <div>
+                        <img class="loader" id="gifs" src="../static/img/loader.gif" />
+                    </div>
                 </form>
                 <div class="content">
                     <button class="result">
-                        {% if prediction %}
-                            {{ prediction_text }}
-                            {% else %}
-                            Press Search
-                    {% endif %}
+                        Press Search
                     </button>
                 </div>
             </div>
@@ -135,15 +138,53 @@
                 })
             }
             else {
-                    swal({
-                        title: "Good job!",
-                        text: "You BUSTED NEWS today",
-                        icon: "success",
-                        button: "Done",
-                    });
-                    document.getElementById("form").reset();
-                }
+                swal({
+                    title: "Good job!",
+                    text: "You BUSTED NEWS today",
+                    icon: "success",
+                    button: "Done",
+                });
+                document.getElementById("form").reset();
+            }
         })
+        function load() {
+            var gif = document.getElementById("gifs");
+            var dispy = document.getElementById("open");
+            dispy.style.display = "none";
+            gif.style.display = "block";
+        }
+        function unload() {
+            var gif = document.getElementById("gifs");
+            var dispy = document.getElementById("open");
+            dispy.style.display = "block";
+            gif.style.display = "none";
+        }
+        function request() {
+            var formData = new FormData();
+            var data = document.getElementById('searchtxt').value;
+            var btnText = document.querySelector('.result');
+
+            formData.append("searchtxt", data);
+            console.log(formData)
+            console.log('kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk')
+            load();
+            console.log('ddeddd')
+            fetch('http://localhost:5000/predict', {
+                method: 'post',
+                body: formData
+            })
+                .then(res =>
+                    res.json()
+                ).then(data => {
+                    btnText.innerHTML = data.btnMessage;
+                    unload();
+                })
+        }
+
+        document.getElementById("btn--search").addEventListener("click", function (event) {
+            event.preventDefault();
+            request()
+        });
 
     </script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

@@ -7,9 +7,12 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import numpy as np
 import pickle
 import os
-from flask import Flask, request, render_template, url_for, redirect
+from flask import Flask, request, render_template, url_for, redirect, jsonify
+from flask_cors import CORS, cross_origin
+
 
 app = Flask(__name__)
+CORS(app)
 
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -73,7 +76,12 @@ def predict():
     req = request.form
     news = req.get("searchtxt")
     prediction = predict_news(str(news), 256, model, encoder)
-    return render_template("index.html", prediction_text='News is {}'.format(prediction),prediction = prediction)
+    if prediction:
+        response = {'btnMessage': 'News is {}'.format(prediction)}
+    else:
+        response = {'btnMessage': 'News is {}'.format(prediction)}
+    
+    return jsonify(response), 200
 
 
 if __name__ == "__main__":
