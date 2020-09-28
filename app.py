@@ -73,7 +73,7 @@ def predict():
     req = request.form
     news = req.get("searchtxt")
     prediction = predict_news(str(news), 256, model, encoder)
-    return render_template("index.html", prediction_text='News is {}'.format(prediction))
+    return render_template("index.html", prediction_text='News is {}'.format(prediction),prediction = prediction)
 
 
 if __name__ == "__main__":
