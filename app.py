@@ -70,6 +70,7 @@ def covid_func():
     
 
 @app.route("/predict", methods=['POST'])
+@cross_origin()
 def predict():
     model, encoder = loadModels('models', 'models')
     #model, encoder = loadModels('E:\\New folder\\Fake-Local\\models', 'E:\\New folder\\Fake-Local\\models')
