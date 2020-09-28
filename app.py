@@ -7,17 +7,13 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import numpy as np
 import pickle
 import os
-from flask import Flask, request, render_template, url_for, redirect, jsonify, response 
+from flask import Flask, request, render_template, url_for, redirect, jsonify
 from flask_cors import CORS, cross_origin
 
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
 
-@app.after_request
-def add_headers(response):
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
 
 nltk.download('stopwords')
 nltk.download('punkt')
