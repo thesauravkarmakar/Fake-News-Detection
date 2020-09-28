@@ -39,7 +39,13 @@
                         class="button popup-youtube"><i class="fa fa-play-circle"></i> How it works</a>
                 </form>
                 <div class="content">
-                    <button class="result">{{ prediction_text }}</button>
+                    <button class="result">
+                        {% if prediction %}
+                            {{ prediction_text }}
+                            {% else %}
+                            Press Search
+                    {% endif %}
+                    </button>
                 </div>
             </div>
             <div class="col span_1_of_2">
