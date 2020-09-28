@@ -7,7 +7,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import numpy as np
 import pickle
 import os
-from flask import Flask, request, render_template, url_for, redirect, jsonify
+from flask import Flask, request, render_template, url_for, redirect, jsonify, response 
 from flask_cors import CORS, cross_origin
 
 
