@@ -14,6 +14,11 @@ from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 CORS(app)
 
+@app.after_request
+def add_headers(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+
 nltk.download('stopwords')
 nltk.download('punkt')
 
@@ -70,7 +75,6 @@ def covid_func():
     
 
 @app.route("/predict", methods=['POST'])
-@cross_origin()
 def predict():
     model, encoder = loadModels('models', 'models')
     #model, encoder = loadModels('E:\\New folder\\Fake-Local\\models', 'E:\\New folder\\Fake-Local\\models')
