@@ -2,29 +2,23 @@
 	<img src="https://github.com/thesauravkarmakar/Fake-News-Detection/blob/master/static/assets/Bust%20News%20Logo.png" align="right" width="200" height="200"/>
 </a>
 
-<p align="center">
-    <br>
-    <br>
- 	<img src = https://img.shields.io/website-up-down-green-red/http/shields.io.svg>
-	<img src = https://www.herokucdn.com/deploy/button.svg>
-	<img src = https://img.shields.io/badge/License-GPLv3-blue.svg>
-</p>
+Bust News
+======================
+[![Website Status](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://status.heroku.com/) 
+[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/thesauravkarmakar/Fake-News-Detection/blob/master/LICENSE)  
 
-
-## :pushpin: About Bust News
+:star: Star us on GitHub — it helps!
 
 ## :film_projector: Screenshots
 
-## Table of Contents (Optional)
-
-> If your `README` has a lot of info, section headers might be nice.
+## Table of Contents
 
 - [Installation](#installation)
-- [Technology Stack](#technlogy-stack)
+- [Technology Stack](#technology-stack)
 - [Team](#team)
 - [License](#license)
 
-### Installation
+## Installation
 
 Use pip installation to install dependencies from requirements.txt 
  ```bash
