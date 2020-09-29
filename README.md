@@ -5,9 +5,7 @@
 Bust News
 ======================
 [![Website Status](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://status.heroku.com/) 
-[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/thesauravkarmakar/Fake-News-Detection/blob/master/LICENSE)  
-
-:star: Star us on GitHub — it helps!
+[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/thesauravkarmakar/Fake-News-Detection/blob/master/LICENSE)  [![Python](https://img.shields.io/badge/python-v3.7.7-green)]()  
 
 ## :film_projector: Screenshots
 
@@ -18,12 +16,17 @@ Bust News
 - [Team](#team)
 - [License](#license)
 
-## Installation
+## :zap: Installation
 
-Use pip installation to install dependencies from requirements.txt 
- ```bash
+1. Fork this repository and clone to your system
+2. In CLI, use pip installation to install dependencies from requirements.txt 
+```bash
     $ pip install -r requirements.txt
  ```
+3. Then 
+```bash
+    $ python app.py
+ ```	
 ## :man_technologist: Technology Stack
 
 ### Front-end 
@@ -48,7 +51,12 @@ Use pip installation to install dependencies from requirements.txt
 
 ## :man_in_tuxedo: Team
 [Saurav Karmakar](https://www.linkedin.com/in/sauravkarmakar/)
+[Aagam Jain](https://www.linkedin.com/in/aagam-jain-b5760619a/)
+[Utkarsh Kumawat](https://www.linkedin.com/in/utkarsh-kumawat-86094816b/)
 
+## Show your support
+
+Please ⭐️ this repository if this project helped you!
 
 ### :pencil: License
 
