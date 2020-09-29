@@ -521,8 +521,8 @@ transition: all 250ms linear;
 
 .loader {
   height: 60%;
-  margin-top: 20%;
-  margin-left: 35%;
+  margin-top: 30%;
+  margin-left: 45%;
   display: none;
 }
 
