@@ -7,23 +7,27 @@ Bust News
 [![Website Status](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://status.heroku.com/) 
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/thesauravkarmakar/Fake-News-Detection/blob/master/LICENSE)  [![Python](https://img.shields.io/badge/python-v3.7.7-green)]()  
 
-## :film_projector: Screenshots
 
 ## Table of Contents
-
+- [Demo](#demo)
 - [Installation](#installation)
 - [Technology Stack](#technology-stack)
 - [Team](#team)
 - [License](#license)
 
+## 🖥️ Demo
+
 ## :zap: Installation
 
-1. Fork this repository and clone to your system
-2. In CLI, use pip installation to install dependencies from requirements.txt 
+1. Clone the Repository.
+```bash
+    $ git clone https://github.com/thesauravkarmakar/Fake-News-Detection
+ ```
+2. Install dependencies 
 ```bash
     $ pip install -r requirements.txt
  ```
-3. Then 
+3. Run 
 ```bash
     $ python app.py
  ```	
