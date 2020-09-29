@@ -1,14 +1,18 @@
 
 ### Folder Structure
 
-	├── dataset                   # Kaggle Dataset
 	├── model                     # Fake News Model
 	├── static		      # Resources
-	│   ├── css                 
-	│   └── img                              
+	│   ├── assets
+	│   ├── css 
+	│   ├── img
+	│   └── scripts
 	├── templates                 # HTML Pages           
 	├── LICENSE
-	└── README.md
+	├── Procfile  
+	├── README.md
+	├── app.py
+	└── requirements.txt
 
 ### Installing dependencies
 
