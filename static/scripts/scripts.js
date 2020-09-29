@@ -46,4 +46,4 @@
 		removalDelay: 300,
 		mainClass: 'my-mfp-slide-bottom'
     });
-});
+})(jQuery);
